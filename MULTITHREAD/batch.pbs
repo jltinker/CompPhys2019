@@ -1,0 +1,14 @@
+#!/bin/tcsh
+#PBS -N midpnt_omp
+#PBS -l nodes=1:ppn=24
+#PBS -l walltime=20:00:00
+#PBS -l mem=4GB
+#PBS -j oe
+
+
+set echo
+pwd
+cd  /mount/sirocco2/tinker/COMP_PHYS
+
+setenv OMP_NUM_THREADS 10
+./midpnt_omp 10000 > out
